@@ -23,6 +23,8 @@ function getDogImage(numInput) {
       .catch(error => alert('Something went wrong. Try again later.'));
   } else if (numInput > 50) {
     return alert('Please choose a number equal or less than 50');
+  } else if (numInput < 0) {
+    return alert('Please choose a number higher than 0');
   } else {
     fetch(`https://dog.ceo/api/breeds/image/random/${numInput}`)
       .then(response => response.json())
